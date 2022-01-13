@@ -12,7 +12,7 @@ public class ProductDao {
     public static final String HASH_KEY = "Product";
 
     @Autowired
-    private RedisTemplate template;
+    private RedisTemplate template; //Field injection (Preferably ,I generally use Constructor injection, ignore  this DI usage =) )
 
     public Product save(Product product) {
         template.opsForHash().put(HASH_KEY, product.getId(), product);
